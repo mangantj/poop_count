@@ -2,5 +2,5 @@
   <%= show_svg("poop.svg") %>
   <h1 class="font-bold text-4xl text-brown">Poop Count</h1>
   <p class="text-gray-400">The most important count</p>
-  <%= link_to "Sign in", new_user_session_path, class: "underline" %>
+  <%= link_to "Sign in", new_user_session_path, class: "underline" unless user_signed_in? %>
 </div>
