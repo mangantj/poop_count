@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'public#index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_scope :user do
+    unauthenticated :user do
+      root 'public#index', as: :unauthenticated_root 
+    end
+    authenticated :user do
+      root to: 'poops#index', as: :authenticated_root
+    end
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :poops
 end
