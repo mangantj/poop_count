@@ -15,7 +15,7 @@
 
   <div class="my-5">
     <%= form.label :time %>
-    <%= form.datetime_field :time, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", value: Time.zone.now.strftime("%Y-%m-%dT%k:%M") %>
+    <%= form.datetime_field :time, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", value: Time.now.in_time_zone(current_user.time_zone).strftime("%Y-%m-%dT%k:%M") %>
   </div>
 
   <div class="my-5">
