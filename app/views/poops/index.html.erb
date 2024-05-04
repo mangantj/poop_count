@@ -1,14 +1,27 @@
-<div class="w-full">
+<div class="w-full flex flex-col space-y-4">
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Poops</h1>
+    <h1 class="font-bold text-4xl">Poop Diary</h1>
     <%= link_to "New poop", new_poop_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="poops" class="min-w-full">
-    <%= render @poops %>
+
+
+  <div class="relative overflow-x-auto">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+          <th scope="col" class="px-6 py-3">Time</th>
+          <th scope="col" class="px-6 py-3">Star Rating</th>
+          <th scope="col" class="px-6 py-3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render current_user.poops %>
+      </tbody>
+    </table>
   </div>
 </div>
