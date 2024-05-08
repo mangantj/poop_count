@@ -1,4 +1,10 @@
-<%= modal do %>
+<%= modal do |m| %>
+  <% m.title do %>
+    <div class="text-lg font-semibold">
+      <%= poop_modal_header_title %>
+    </div>
+  <% end %>
+
   <%= form_with(model: poop, class: "contents") do |form| %>
     <% if poop.errors.any? %>
       <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">

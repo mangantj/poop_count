@@ -13,9 +13,8 @@
 
   <body>
     <%= turbo_frame_tag "modal" %>
-    <div class="container flex justify-center">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+    <div class="flex justify-center w-full absolute top-0">
+      <%= render "layouts/flash" %>
     </div>
     <main class="container mx-auto mt-28 px-5">
       <%= yield %>

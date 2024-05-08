@@ -38,8 +38,8 @@ class PoopsController < ApplicationController
   def update
     respond_to do |format|
       if @poop.update(poop_params)
-        format.html { redirect_to poop_url(@poop), notice: "Poop was successfully updated." }
-        format.json { render :show, status: :ok, location: @poop }
+        format.html { redirect_to poops_url(@poop), notice: "Poop was successfully updated." }
+        # format.json { render :show, status: :ok, location: @poop }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @poop.errors, status: :unprocessable_entity }
@@ -56,6 +56,11 @@ class PoopsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def poop_modal_header_title
+    @poop.new_record? ? "Create a poop" : "Update da poop"
+  end
+  helper_method :poop_modal_header_title
 
   private
     # Use callbacks to share common setup or constraints between actions.
