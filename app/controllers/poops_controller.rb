@@ -3,7 +3,7 @@ class PoopsController < ApplicationController
 
   # GET /poops or /poops.json
   def index
-    @poops = Poop.all
+    
   end
 
   # GET /poops/1 or /poops/1.json
