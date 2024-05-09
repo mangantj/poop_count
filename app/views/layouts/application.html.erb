@@ -14,8 +14,8 @@
   <body>
     <%= turbo_frame_tag "modal" %>
     <%= render "layouts/flash" %>
-    <%= render "layouts/heading" %>
-    <main class="container mx-auto mt-28 px-5">
+    <%= render "layouts/heading" if signed_in? %>
+    <main class="container mx-auto mt-28 px-5 max-w-screen-xl">
       <%= yield %>
     </main>
   </body>
