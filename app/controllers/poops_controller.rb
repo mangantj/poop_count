@@ -70,6 +70,6 @@ class PoopsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def poop_params
-      params.require(:poop).permit(:user_id, :time, :stars)
+      params.require(:poop).permit(:user_id, :time, :stars, :description)
     end
 end

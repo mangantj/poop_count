@@ -30,6 +30,11 @@
       <%= form.number_field :stars, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", max: 5, min: 1 %>
     </div>
 
+    <div class="my-5">
+      <%= form.label :description, "Diary entry" %>
+      <%= form.text_area :description, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", size: "20x5" %>
+    </div>
+
     <div class="inline">
       <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
     </div>
