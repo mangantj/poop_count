@@ -25,7 +25,7 @@ class PoopsController < ApplicationController
 
     respond_to do |format|
       if @poop.save
-        format.html { redirect_to poops_url(@poop), notice: "Poop was successfully created." }
+        format.html { redirect_to poops_url(@poop), notice: "Swiggity swoogity, you better be cleanin' dat booty" }
         # format.json { render :show, status: :created, location: @poop }
       else
         format.html { render :new, status: :unprocessable_entity }
