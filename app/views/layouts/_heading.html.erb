@@ -1,0 +1,7 @@
+<div class="w-full flex absolute justify-end top-0 pr-2">
+  <% if signed_in? %>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Sign in", new_user_session_path, class: "underline" %>
+  <% end %>
+</div>
