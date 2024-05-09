@@ -38,7 +38,7 @@ class PoopsController < ApplicationController
   def update
     respond_to do |format|
       if @poop.update(poop_params)
-        format.html { redirect_to poops_url(@poop), notice: "Poop was successfully updated." }
+        format.html { redirect_to poops_url(@poop), notice: "Don't be fudgin' your numbers, now!" }
         # format.json { render :show, status: :ok, location: @poop }
       else
         format.html { render :edit, status: :unprocessable_entity }
