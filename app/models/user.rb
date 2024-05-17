@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :poops
+  has_many :league_users
+  has_many :leagues, through: :league_users
 end
