@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :poops
   has_many :league_users
   has_many :leagues, through: :league_users
+
+  def name
+    [first_name, last_name].join(" ")
+  end
 end
