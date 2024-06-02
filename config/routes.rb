@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :leagues
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
   devise_scope :user do
     unauthenticated :user do
       root 'public#index', as: :unauthenticated_root 

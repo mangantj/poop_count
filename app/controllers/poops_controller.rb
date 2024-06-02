@@ -17,6 +17,7 @@ class PoopsController < ApplicationController
 
   # GET /poops/1/edit
   def edit
+    authorize! :edit, @poop
   end
 
   # POST /poops or /poops.json

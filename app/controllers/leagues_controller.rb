@@ -1,9 +1,11 @@
 class LeaguesController < ApplicationController
+  # before_action :check_super_admin?
   before_action :set_league, only: %i[ show edit update destroy ]
 
   # GET /leagues or /leagues.json
   def index
     @leagues = League.all
+    authorize! :read, League.first
   end
 
   # GET /leagues/1 or /leagues/1.json
@@ -66,5 +68,9 @@ class LeaguesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def league_params
       params.require(:league).permit(:name, :description)
+    end
+
+    def check_super_admin?
+      current_user.super_admin?
     end
 end
