@@ -3,7 +3,7 @@ class PoopsController < ApplicationController
 
   # GET /poops or /poops.json
   def index
-    
+    @pagy, @poops = pagy(current_user.poops.order(:time), items: 5)
   end
 
   # GET /poops/1 or /poops/1.json

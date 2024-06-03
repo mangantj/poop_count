@@ -81,3 +81,5 @@ group :test do
 end
 
 gem "cancancan", "~> 3.6"
+
+gem "pagy", "~> 8.4"

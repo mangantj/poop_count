@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include Pagy::Backend
   around_action :set_time_zone, if: :current_user
 
   private

@@ -18,13 +18,17 @@
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
           <th scope="col" class="px-6 py-3">Time</th>
-          <th scope="col" class="px-6 py-3">Poop Rating</th>
+          <th scope="col" class="px-6 py-3">Majestic Rating</th>
           <th scope="col" class="px-6 py-3"></th>
         </tr>
       </thead>
       <tbody>
-        <%= render current_user.poops.order(:time) %>
+        <%= render @poops %>
       </tbody>
     </table>
+    <div class="flex mt-12 items-center justify-center space-x-4 w-full">
+      <%== pagy_nav(@pagy) %>
+    </div>
+    <p class="text-center mt-8 text-gray-500"><%== pagy_info @pagy %></p>
   </div>
 </div>
