@@ -27,8 +27,7 @@
       </tbody>
     </table>
     <div class="flex mt-12 items-center justify-center space-x-4 w-full">
-      <%== pagy_nav(@pagy) %>
+      <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
     </div>
-    <p class="text-center mt-8 text-gray-500"><%== pagy_info @pagy %></p>
   </div>
 </div>
