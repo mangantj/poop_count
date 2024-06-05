@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_06_02_021952) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_05_223920) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,7 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_02_021952) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "time_zone"
+    t.string "time_zone", default: "Central Time (US & Canada)"
     t.string "first_name"
     t.string "last_name"
     t.boolean "super_admin", default: false
