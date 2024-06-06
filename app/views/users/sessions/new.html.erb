@@ -1,4 +1,9 @@
-<div class="max-w-sm mx-auto block mb-2 text-lg font-medium text-gray-900">Log in</div>
+<div class="flex justify-center w-full mb-5">
+  <%= image_tag 'poop.svg', class: "h-8 inline-block pr-2"  %>
+  <div class="font-bold text-2xl text-brown">Poop Count</div>
+</div>
+
+<%# <div class="max-w-sm mx-auto block mb-2 text-lg font-medium text-gray-900">Log in</div> %>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "max-w-sm mx-auto" }) do |f| %>
   <div class="mb-5">
@@ -23,6 +28,6 @@
   </div>
 <% end %>
 
-<div class="max-w-sm mx-auto">
+<div class="max-w-sm mx-auto mt-5">
   <%= render "users/shared/links" %>
 </div>
