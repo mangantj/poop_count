@@ -1,3 +1,7 @@
+<%
+submit_text = @poop.new_record? ? "Create" : "Update"
+%>
+
 <%= modal do |m| %>
   <% m.title do %>
     <div class="text-lg font-semibold">
@@ -36,7 +40,9 @@
     </div>
 
     <div class="inline">
-      <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+      <%= button_tag class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer", type: :submit do  %>
+        <%= submit_text %> <%= image_tag("poop.svg", class: "h-6 inline-block") %>
+      <% end %>
     </div>
   <% end %>
 <% end %>
