@@ -37,15 +37,16 @@
       </thead>
       <tbody>
         <% @league.users.find_each do |user| %>
+          <% week_poops = user.poops_per_day_for_week(Time.zone.now) %>
           <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" id="<%= dom_id user %>">
             <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= user.name %></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td class="px-6 py-4"><%= week_poops["Monday"] %></td>
+            <td class="px-6 py-4"><%= week_poops["Tuesday"] %></td>
+            <td class="px-6 py-4"><%= week_poops["Wednesday"] %></td>
+            <td class="px-6 py-4"><%= week_poops["Thursday"] %></td>
+            <td class="px-6 py-4"><%= week_poops["Friday"] %></td>
+            <td class="px-6 py-4"><%= week_poops["Saturday"] %></td>
+            <td class="px-6 py-4"><%= week_poops["Sunday"] %></td>
           </tr>
         <% end %>
       </tbody>
