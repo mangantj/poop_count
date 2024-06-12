@@ -18,22 +18,30 @@
     <%= f.email_field :email, class: "bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed", autofocus: false, autocomplete: "email", readonly: true %>
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+  <div class="mb-5">
+    <%= f.label :time_zone, class: "block mb-2 text-sm font-medium text-gray-900" %>
+    <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, {}, { class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" } %>
+  </div>
+
+  <% if false #devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="mb-5">
-    <%= f.label :password, class: "block mb-2 text-sm font-medium text-gray-900" %> <i class="block mb-2 text-sm font-medium text-gray-900">(leave blank if you don't want to change it)</i>
-    <%= f.password_field :password, autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
-    <% if @minimum_password_length %>
-      <em class="block mb-2 text-sm font-medium text-gray-900"><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+  <% if false %>
 
-  <div class="mb-5">
-    <%= f.label :password_confirmation, class: "block mb-2 text-sm font-medium text-gray-900" %>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
-  </div>
+    <div class="mb-5">
+      <%= f.label :password, class: "block mb-2 text-sm font-medium text-gray-900" %> <i class="block mb-2 text-sm font-medium text-gray-900">(leave blank if you don't want to change it)</i>
+      <%= f.password_field :password, autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+      <% if @minimum_password_length %>
+        <em class="block mb-2 text-sm font-medium text-gray-900"><%= @minimum_password_length %> characters minimum</em>
+      <% end %>
+    </div>
+
+    <div class="mb-5">
+      <%= f.label :password_confirmation, class: "block mb-2 text-sm font-medium text-gray-900" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+    </div>
+  <% end %>
 
   <div class="mb-5">
     <%= f.label :current_password, class: "block mb-2 text-sm font-medium text-gray-900" %> <i class="block mb-2 text-sm font-medium text-gray-900">(we need your current password to confirm your changes)</i>
