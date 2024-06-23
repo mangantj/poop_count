@@ -26,12 +26,23 @@ submit_text = @poop.new_record? ? "Create" : "Update"
 
     <div class="my-5">
       <%= form.label :time %>
-      <%= form.datetime_field :time, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", value: Time.now.in_time_zone(current_user.time_zone).strftime("%Y-%m-%dT%k:%M") %>
+      <%= form.datetime_field :time, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full dark:text-black", value: Time.now.in_time_zone(current_user.time_zone).strftime("%Y-%m-%dT%k:%M") %>
     </div>
 
-    <div class="my-5">
-      <%= form.label :stars, "Rating - Little bird (1) up to Lincoln log (5)" %>
-      <%= form.number_field :stars, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", max: 5, min: 1 %>
+    <div class="my-5" data-controller="star-rating" data-star-rating-is-edit-value="<%= !poop.new_record? %>">
+      <%= form.label :stars, "Rate the Glory", class: "block" %>
+      <% Poop::MAX_RATING.times do |n| %>
+        <%= inline_svg_tag("poop.svg",
+          class: "w-8 h-8 filter-white inline-block",
+          data: {
+            star_rating_target: "star",
+            star_rating_star_index_param: n,
+            action: "pointerenter->star-rating#enter
+              pointerleave->star-rating#leave
+              click->star-rating#click"
+          }) %>
+        <% end %>
+        <%= form.hidden_field :stars, data: {star_rating_target: "input"}%>
     </div>
 
     <div class="my-5">

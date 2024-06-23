@@ -10,7 +10,7 @@ module PoopsHelper
   def display_poop_rating(stars)
     out = ''
     stars.times do 
-      out << image_tag('poop.svg', class: "h-4 inline-block")
+      out << inline_svg_tag('poop.svg', class: "h-4 w-4 inline-block")
     end
     out.html_safe
   end
