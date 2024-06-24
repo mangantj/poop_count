@@ -14,7 +14,8 @@ new_league = League.where(name: "Something For The Bois", description: "Here we 
 users = []
 ["Craig Dobson", "Mike Sherman", "Colten Jones"].each do |name|
   name_split = name.split(" ")
-  user = User.where(first_name: name_split[0], last_name: name_split[1], super_admin: false).first_or_initialize
+  email = "#{name_split[0]}+#{name_split[1]}@gmail.com"
+  user = User.where(first_name: name_split[0], last_name: name_split[1], email: email, super_admin: false).first_or_initialize
   if user.new_record?
     user.password = "password"
     user.save!

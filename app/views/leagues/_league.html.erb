@@ -7,6 +7,7 @@
     <%= league.users.count %>
   </td>
   <td class="px-6 py-4">
+    <%= link_to "View", league_path(league), class: "font-medium text-blue-600 dark:text-blue-500 hover:underline pr-2" if current_user.super_admin? %>
     <%= link_to "Edit", edit_league_path(league), class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
   </td>
 </tr>

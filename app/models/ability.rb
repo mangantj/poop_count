@@ -30,6 +30,7 @@ class Ability
     # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md
     can [:destroy, :update], Poop, user: user
     can :read, Poop
+    can :read, League, users: user
 
     if user.super_admin?
       can :manage, League
